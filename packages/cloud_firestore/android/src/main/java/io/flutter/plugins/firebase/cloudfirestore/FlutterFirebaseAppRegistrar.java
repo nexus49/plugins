@@ -1,3 +1,7 @@
+// Copyright 2019 The Chromium Authors. All rights reserved.
+// Use of this source code is governed by a BSD-style license that can be
+// found in the LICENSE file.
+
 package io.flutter.plugins.firebase.cloudfirestore;
 
 import com.google.firebase.components.Component;
@@ -7,12 +11,9 @@ import java.util.Collections;
 import java.util.List;
 
 public class FlutterFirebaseAppRegistrar implements ComponentRegistrar {
-  private static final String LIBRARY_NAME = "flutter-fire-fst";
-  private static final String LIBRARY_VERSION = "0.12.5+1";
-
   @Override
   public List<Component<?>> getComponents() {
     return Collections.<Component<?>>singletonList(
-        LibraryVersionComponent.create(LIBRARY_NAME, LIBRARY_VERSION));
+        LibraryVersionComponent.create(BuildConfig.LIBRARY_NAME, BuildConfig.LIBRARY_VERSION));
   }
 }
