@@ -11,6 +11,8 @@ dynamic _offsetToJson(Offset offset) {
   return <dynamic>[offset.dx, offset.dy];
 }
 
+typedef StringCallback = void Function(String markerId);
+
 /// Text labels for a [Marker] info window.
 class InfoWindow {
   const InfoWindow({
@@ -42,7 +44,7 @@ class InfoWindow {
   final Offset anchor;
 
   /// onTap callback for this [InfoWindow].
-  final VoidCallback onTap;
+  final StringCallback onTap;
 
   /// Creates a new [InfoWindow] object whose values are the same as this instance,
   /// unless overwritten by the specified parameters.
@@ -50,7 +52,7 @@ class InfoWindow {
     String titleParam,
     String snippetParam,
     Offset anchorParam,
-    VoidCallback onTapParam,
+    StringCallback onTapParam,
   }) {
     return InfoWindow(
       title: titleParam ?? title,
