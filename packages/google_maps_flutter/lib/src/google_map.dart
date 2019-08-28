@@ -297,7 +297,7 @@ class _GoogleMapState extends State<GoogleMap> {
     assert(markerIdParam != null);
     final MarkerId markerId = MarkerId(markerIdParam);
     if (_markers[markerId]?.onTap != null) {
-      _markers[markerId].onTap();
+      _markers[markerId].onTap(_markers[markerId]?.position, markerIdParam);
     }
   }
 

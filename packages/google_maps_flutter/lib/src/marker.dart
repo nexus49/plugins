@@ -12,6 +12,7 @@ dynamic _offsetToJson(Offset offset) {
 }
 
 typedef StringCallback = void Function(String markerId);
+typedef MarkerCallback = void Function(LatLng position, String markerId);
 
 /// Text labels for a [Marker] info window.
 class InfoWindow {
@@ -216,7 +217,9 @@ class Marker {
   final double zIndex;
 
   /// Callbacks to receive tap events for markers placed on this map.
-  final VoidCallback onTap;
+  // final VoidCallback onTap;
+  final MarkerCallback onTap;
+  
 
   /// Creates a new [Marker] object whose values are the same as this instance,
   /// unless overwritten by the specified parameters.
@@ -232,7 +235,7 @@ class Marker {
     double rotationParam,
     bool visibleParam,
     double zIndexParam,
-    VoidCallback onTapParam,
+    MarkerCallback onTapParam,
   }) {
     return Marker(
       markerId: markerId,
